@@ -1,0 +1,126 @@
+/*IMPORTS*/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,700;1,300&display=swap');
+
+/*COLORS:   
+$nyanza: rgba(216, 243, 220, 1);
+$turquoise-green: rgba(183, 228, 199, 1);
+$turquoise-green-2: rgba(149, 213, 178, 1);
+$ocean-green: rgba(116, 198, 157, 1);
+$ocean-green-2: rgba(82, 183, 136, 1);
+$illuminating-emerald: rgba(64, 145, 108, 1);
+$bottle-green: rgba(45, 106, 79, 1);
+$brunswick-green: rgba(27, 67, 50, 1);
+$dark-jungle-green: rgba(8, 28, 21, 1);
+*/
+
+body{
+  margin: 0 auto;
+}
+
+/*GENERIC*/
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.textblock{
+  color:white;
+  display: inline-block;  
+
+}
+
+.Font1{
+  font-family: 'Comic Neue', cursive;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.italic{
+  font-style: italic;
+}
+
+
+/*SPECIAL*/
+
+.topnav{
+  background-color: rgba(27, 67, 50, 1);
+  overflow: hidden;
+  height: 8vh;
+  width: 100vw;
+  position: fixed;
+  vertical-align: top;
+
+}
+
+.topnav a{
+  float: left;
+  color: rgba(216, 243, 220, 1);
+  text-align: center;
+  padding: 2.1vh 2vw;
+  text-decoration: none;
+  height: 5vh;
+  font-size: 4vh;
+  line-height: 4vh;
+  font-family: 'Comic Neue', cursive;
+  transition: .3s ease-in-out;
+}
+
+.topnav a:hover{
+  background-color: rgba(183, 228, 199, 1);
+  color:rgba(8, 28, 21, 1);
+  transition: .3s ease-in-out;
+}
+
+.topnav a:active{
+  background-color: #04AA6D;
+  color: white;
+  transition: .3s ease-in-out;
+}
+
+img.navIcon{
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  width: 4vw;
+  height: 4vh;
+}
+
+
+
+.parallax {
+  background-image: url("../../Resources/Images/achtergrond-website.jpg");
+
+  height: 100%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content{
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.footer{
+  height: 35vh;
+  background-color: #333;
+  color: white;
+}
+
+
+.WeetjesText{
+  
+
+  padding-top: 30vh;
+  text-align: center;
+  background-image: radial-gradient()
+}
+
