@@ -114,13 +114,44 @@ img.navIcon{
   background-color: #333;
   color: white;
 }
+ 
+@keyframes clicked{
+  0%   {transform: rotate(0deg);}
 
+  25%  {transform: rotate(.7deg)}
+
+  75%  {transform: rotate(-.7deg)}
+  100% {transform: rotate(0deg);}
+}
 
 .WeetjesText{
+  animation: none .2s linear 0s infinite;
   
-
-  padding-top: 30vh;
+  font-size: 5vh;
+  color:rgba(183, 228, 199, 1);
+  margin-top: 30vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   text-align: center;
-  background-image: radial-gradient()
+  background: rgb(27,67,50);
+  background: linear-gradient(58deg, rgba(27,67,50,1) 0%, rgba(45,106,79,1) 36%, rgba(64,145,108,1) 100%);
 }
+
+
+
+.NextButton{
+  font-size: 5vh;
+  color:rgba(183, 228, 199, 1);
+  margin-top: 10vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  text-align: center;
+  background: rgb(27,67,50);
+  background: linear-gradient(58deg, rgba(27,67,50,1) 0%, rgba(45,106,79,1) 36%, rgba(64,145,108,1) 100%);
+}
+
+.NextButton:active{
+  animation: clicked .15s linear 0s infinite;
+}
+
 
