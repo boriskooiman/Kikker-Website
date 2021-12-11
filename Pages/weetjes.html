@@ -8,27 +8,28 @@
     <link href="/StyleSHeets/weetjes.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-        <script src="/weetje.js"></script>
-
     <!--Navigation Bar -->
     <div class="topnav">
       <a class="active" href="/index.html">Home</a> 
-      <a href="./weetjes.html">Weetjes</a> 
-      <a href="./TEMPLATE.html">Verzorgen</a> 
-      <a href="./TEMPLATE.html">Recepten</a> 
-      <a href="./rekenmachine.html">Kikkermachine</a> 
-      <a href="./overons.html">About</a> 
+      <a href="/Pages/weetjes.html">The Elder Frog</a> 
+      <a href="/Pages/TEMPLATE.html">Caretaking</a> 
+      <a href="/Pages/TEMPLATE.html">Recipes</a> 
+      <a href="/Pages/rekenmachine.html">The Frog Machine</a> 
+      <a href="/Pages/overons.html">About</a> 
     </div>
     <!--CONTENT-->
     <div class="parallax" style="height: 100vh;">
       <div style="height: 1px;"> </div>
-      <div class="WeetjesText">WEETJE HIER</div>
-      <div class="NextButton">NEXT</div>
+      <div class="Flex">
+        <img class="MonkImg" src="/Resources/Images/Frog Monk.jpg">
+        <div class="WeetjesText"> 
+          <div class="WeetjeTitle">The Elder Frog once said</div> 
+          <div id="InhoudWeetje">WEETJE HIER</div>
+        </div>
+      </div>
+      <button onclick="NiewWeetje()" class="NextButton Font1">Bless me with more wisdom</button>
     </div>
-    <!--Footer-->
-    <div class="footer">
-      AMOGUS
-    </div>
-    
+    <script src="/weetje.js"></script>
+
   </body>
 </html>
