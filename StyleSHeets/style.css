@@ -78,9 +78,9 @@ body{
   transition: .3s ease-in-out;
 }
 
-.topnav a:active{
-  background-color: #04AA6D;
-  color: rgba(216, 243, 220, 1);
+#active{
+  background-color: rgba(183, 228, 199, 1);
+  color:rgba(8, 28, 21, 1);
   transition: .3s ease-in-out;
 }
 
