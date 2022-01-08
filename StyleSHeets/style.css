@@ -125,14 +125,6 @@ img.navIcon{
   height: 2.5vh;
 }
 
-
-.Inleiding:hover{
-  background-color: rgba(0, 0, 0, 0.1);
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  transition: .5s ease-in-out;
-}
-
 .Inhoud{
   margin-top: 10vh;
 }
@@ -219,4 +211,79 @@ img.navIcon{
   text-align: center;
 
   font-family: 'Calistoga', cursive;
+}
+
+/*LEARNING*/
+
+.square{
+  background-image: linear-gradient(to bottom left, rgba(64, 145, 108, .6), rgba(27, 67, 50, .6));
+  backdrop-filter: blur(15px);
+  color: rgba(216, 243, 220, 1);
+
+}
+
+.Generic{
+  margin-top:14vh;
+  margin-left: 4.5vw; 
+  margin-right: 4.5vw; 
+  height: 30vh;
+  padding: 2vh; 
+  font-size: 3.2vh;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 0px 4px 4px rgba(27, 67, 50, 1);
+
+}
+
+.Generic p{
+  font-weight: 300;
+}
+
+.Species{
+  margin-top: 7vh;
+}
+
+.speciesTable{
+  border-collapse: separate;
+  border-spacing: 15px;
+
+}
+
+.speciesTable td{
+  width: 50vw;
+  height: 30vh;
+
+  text-align: center;
+
+  background-image: linear-gradient(to bottom left, rgba(64, 145, 108, .6), rgba(27, 67, 50, .6));
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0px 0px 4px 4px rgba(27, 67, 50, 1);
+
+  color: rgba(216, 243, 220, 1);
+}
+
+.speciesTable h2{
+  font-size: 5vh;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.speciesTable p{
+  font-size: 3.2vh;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.speciesText{
+  margin-top: auto;
+  margin-bottom: auto;
+
+  padding-left: 2vw;
+  text-align: center;
+  float: left;
+  width: 27vw;
+  height: 30vh;
+}
+.speciesTable img{
+  box-shadow: 0px 0px 4px 4px rgba(27, 67, 50, 1);
 }
