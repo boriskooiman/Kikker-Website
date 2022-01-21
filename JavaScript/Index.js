@@ -1,38 +1,113 @@
-var slideIndex = 1;
-Start();
-var id = null;
-var index = 0;
+/*https://codepen.io/zuraizm/pen/vGDHl*/
+jQuery(document).ready(function ($) {
 
+  Start();
+  
+  function Start(){
+    setInterval(function () {
+        //moveRight();
+    }, 3000);
 
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("Slide");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    setInterval(function(){
+      Repeat();
+    }, 15)
   }
 
-  slides[slideIndex-1].style.display = "block";
+  //USEFUL VARIABLES TO SET
+  var milisecondsBetweenSlides = 5000;
+  var slideDuration = 300;
+
+  var time = 0;
+
+  function Repeat(){
+    time = time + 15;
+    var loadBar = document.getElementById("loadBar");
+
+    var scale = lerp(loadBar.getBoundingClientRect().width / loadBar.offsetWidth, time/(milisecondsBetweenSlides - 5), 0.4);
+    var scaleString = "scale(" + (scale).toString() + ", 1)";
+    
+    $('#loadBar').css({ transform: scaleString });
+
+
+    if(time - milisecondsBetweenSlides < 14 && time - milisecondsBetweenSlides > - 14){
+      moveRight();
+      time = 0;
+    }
+  }
+
+  
+	var slideCount = $('#slider ul li').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
+	$('#slider').css({ width: slideWidth, height: slideHeight });
+	
+	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+	
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, slideDuration, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, slideDuration, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+        time = 0; 
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+        time = 0;
+    });
+
+    $('a.cuteSound').click(function () {
+      window.scroll(0, document.documentElement.scrollHeight * 0.5)
+      StartVideo();
+    });
+});    
+
+function lerp (start, end, amt){
+  return (1-amt)*start+amt*end
 }
 
-function autoSlide(){
-  showSlides(slideIndex += 1)
-  setTimeout(autoSlide, 3000);
-}
+//YOUTUBE EMBED
 
-function Start(){
-  setTimeout(autoSlide, 3000);
-  showSlides(slideIndex);
-}
+// 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
 
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'cBkWhkAZ9ds',
+          playerVars: {
+            'playsinline': 1
+          },
+        });
+      }
+
+      function StartVideo(){
+        player.playVideo();
+      }

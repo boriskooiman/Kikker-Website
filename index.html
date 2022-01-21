@@ -18,35 +18,45 @@
       <a href="/Pages/overons.html">About us</a> 
     </div>
     <!--CONTENT-->
-    <div class="parallax" style="height:280vh;">
+    <div class="parallax" style="height:380vh;">
       <div style="height: 20vh;"> </div> 
+        <div class= "slider" style="height:50vh">
+          <a href="#" class="control_next">></a>
+          <a href="#" class="control_prev"><</a>
+            <div id="slider">
+              <ul>
+            <li>
+              <div class="content">
+                <h1>The frogs of the week</h1>
+              </div>
+                <img style="height: 25vh; margin-top: 2vh; margin-bottom: auto;" src="/Resources/Images/CUTESTFROG.jpg">
+                <img style="height: 25vh; margin-top: 2vh; margin-bottom: auto;" src="/Resources/Images/ADORBFROG.jpg">
+                <img style="height: 25vh; margin-top: 2vh; margin-bottom: auto;" src="/Resources/Images/SeriousFrog.jpg">
 
-      <div class= "slider" style="height:50vh">
-        <button class="left" onclick="plusSlides(-1)"><</button>
-        <button class="right" onclick="plusSlides(1)">></button>
+            </li>
+            <li style="background: rgba(64, 145, 108, 0.3);">
+              <div class="content">
+                <h1>This frog made cute sounds!</h1>
+              </div>
+              <img style="height: 25vh; margin-top: 2vh; margin-left: 6vw; float: left;" src="/Resources/Images/SOUNDFROG.jpg">
+              <a href="#" class="cuteSound" style="line-height: 29vh;"> Click here for sound </a>
 
-        <div class="slideFather">
+            </li>
+            <li>
+              <div class="content">
+                <h1>Hear the wise words of the frog who came before</h1>
+              </div>
+                <a href="/Pages/weetjes.html" id="elderButton" style="line-height: 21.5vh;"> The Elder Frog </a>
 
-            <div class="Slide" style="height: 50vh">
-              HEY <br> NICE COCK
+            </li>
+            <li style="background: rgba(64, 145, 108, 0.3);">
+              {THE FROG OF THE LOG}
+            </li>
+              </ul>                
+
+            <div id="loadBar"></div>
+
             </div>
-            <div class="Slide" style="height: 50vh">
-              AWW <br>
-              THX YOU TOO :)
-            </div>
-            <div class="Slide" style="height: 50vh">
-              WTF DUDE <br>
-              I AM A GIRL
-            </div>
-
-            <div class="slideBoy" id="anim" style="height: 50vh; width: 100vw;"></div>
-
-
-        </div>
-
-
-
-        
       </div>
 
       <div class="content Inleiding" style=" width:98">
@@ -54,6 +64,15 @@
         <div class="textblock left whiteText" style="height: 100%; font-size: 100%; margin-left: 2vw;">
           <h2>An introduction...</h2>
           Frogs are very cool.<br> That is why I made this website. <br>Here you can learn all about <br>frogs and their inner workings.<br>For instance facts about different <br> type of frogs, <br> or how to take care of one.<br> See everything below...
+        </div>
+      </div>
+        <div class="content" style=" width:98vw; height: 102.5vh; margin-top: 15vh;">
+        <h1>A frog making cute sounds</h1>
+        <div class="iframe-container">
+          <!--
+          <iframe id="vid" width="560" height="315" src="https://www.youtube.com/embed/cBkWhkAZ9ds?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          -->
+          <div id="player"></div>
         </div>
       </div>
 
@@ -100,6 +119,9 @@
       
       
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <script src="/JavaScript/Index.js"></script>
   </body>
