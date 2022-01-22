@@ -459,36 +459,50 @@ img.navIcon{
 }
 
 a.control_prev, a.control_next {
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 0px 4px 4px rgba(27, 67, 50, 1);
+
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-top: 2vw;
   position: absolute;
   z-index: 999;
   display: block;
-  width: 10vw;
-  height: 50vh;
+  width: 7vw;
+  height: 42vh;
   background: rgba(45, 106, 79, 0.5);
   color: rgba(216, 243, 220, 1);
   text-decoration: none;
   text-align: center;
-  line-height: 50vh;
+  line-height: 42vh;
   font-size: 6vh;
   font-weight: 1000;
   cursor: pointer;
   font-family: 'Mochiy Pop P One', sans-serif;
 
+  
   transition: all 0.2s ease;
 }
 
 a.control_prev:hover, a.control_next:hover {
   background: rgba(45, 106, 79, 1);
+  box-shadow: 0px 0px 2px 3px rgba(64, 145, 108, 1);
   transition: all 0.2s ease;
 }
 
+a.control_prev:active, a.control_next:active {
+  background: rgba(27, 67, 50, 1);
+  box-shadow: 0px 0px 3px 3px rgba(8, 28, 21, 1);
+  transition: all 0.1s ease;
+}
+
 a.control_prev {
-  border-radius: 0 2px 2px 0;
+  border-radius: 25px 10px 10px 25px;
 }
 
 a.control_next {
   right: 0;
-  border-radius: 2px 0 0 2px;
+  border-radius: 10px 25px 25px 10px;
 }
 
 .slider_option {
@@ -607,4 +621,3 @@ h1{
   padding-top: 4vh;
   padding-bottom: 4vh;
 }
-
