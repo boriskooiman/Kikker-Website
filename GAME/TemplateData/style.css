@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
 
-body { padding: 0; margin: 0 }
-#unity-container { position: absolute }
+body { padding: 0; margin: 0; overflow: visible;}
+#unity-container { position: absolute; overflow: visible; }
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
 #unity-container.unity-mobile { width: 100%; height: 100% }
-#unity-canvas { background: #231F20 }
+#unity-canvas { background: #231F20;
+border-radius: 15px;
+box-shadow: 0px 0px 3px 3px rgba(27, 67, 50, 1);}
 .unity-mobile #unity-canvas { width: 100%; height: 100% }
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
 #unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
