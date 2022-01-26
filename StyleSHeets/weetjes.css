@@ -13,6 +13,40 @@ $brunswick-green: rgba(27, 67, 50, 1);
 $dark-jungle-green: rgba(8, 28, 21, 1);
 */
 
+
+.button{
+  border-radius: 15px;
+  box-shadow: 0px 0px 4px 4px rgba(27, 67, 50, 1);
+  background-color: rgba(45, 106, 79, 0.8);
+  backdrop-filter: blur(4px);
+
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  transition: .3s ease-in-out;
+
+}
+
+.button:hover{
+  background-color: rgba(45, 106, 79, 0.8);
+  box-shadow: 0px 0px 4px 4px rgba(64, 145, 108, 1);
+
+
+  transition: .3s ease-in-out;
+}
+
+.button:active{
+  background-color: rgba(27, 67, 50, 0.6);
+  backdrop-filter: blur(4px);
+  box-shadow: 0px 0px 4px 6px rgba(27, 67, 50, 1);
+
+
+  transition: .1s ease-in-out;
+}
+
 body{
   margin: 0 auto;
 }
@@ -167,8 +201,6 @@ img.navIcon{
   padding-top: 1vh;
   padding-bottom: 1vh;
   text-align: center;
-  background: rgb(27,67,50);
-  background: linear-gradient(58deg, rgba(27,67,50,1) 0%, rgba(45,106,79,1) 36%, rgba(64,145,108,1) 100%);
 
 }
 
@@ -182,7 +214,13 @@ img.navIcon{
   flex-direction: column;
   align-items: center;
   position: absolute;
-  transform: translate(5vw, -48vh);
+  transform: translate(13vw, -48vh);
+
+  padding-right: 2.5vw;
+  padding-left: 2vw;
+  padding-bottom: 8vh;
+  border-radius: 100px;
+  
 }
 
 .Frog2{
@@ -190,32 +228,67 @@ img.navIcon{
   flex-direction: column;
   align-items: center;
   position: absolute;
-  transform: translate(85vw, -48vh);
+  transform: translate(73vw, -48vh);
+
+  padding-left: 2.5vw;
+  padding-right: 2vw;
+  padding-bottom: 8vh;
+  border-radius: 100px;
+  
 }
 
 .head{
-  animation-name: bodyBounce;
+  animation-name: headBounce;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 
   display: flex;
 
   align-content: center;
+  flex-wrap: wrap;
   justify-content: space-around;
 
   width: 6vw; 
   height: 10vh;
   background: rgba(64, 145, 108, 1);
-  border: 1px solid black;
+  background-image: radial-gradient(closest-side,  rgba(64, 145, 108, 1) 75%, rgba(45, 106, 79, 1));
   border-radius: 10vh;
 
   z-index: 3;
 }
 
+.halo{
+  height: 10vh;
+  width: 10vh;
+  background-image: radial-gradient(closest-side,  rgba(0,0,0,0) 70%, #ffbf00);
+  border-radius: 99999999999px;
+  animation-name: haloBounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.2s;
+  transform: rotateX(70deg);
+}
+
+@keyframes haloBounce{
+  0%{
+      transform: translateY(-1vh) rotateX(70deg);
+
+  }
+  50%{
+      transform: translateY(2vh) rotateX(70deg);
+
+  }
+  100%{
+    transform: translateY(-1vh) rotateX(70deg);
+
+  }
+}
+
 .eyes1{
-  height: 2.5vw;
-  width: 2.5vw;
+  height: 2.2vw;
+  width: 2.2vw;
   background: rgba(0, 0, 0, 1);
   border: 5px solid rgba(64, 145, 108, 1);
 
@@ -223,8 +296,8 @@ img.navIcon{
   transform: translate(-0.8vw, -2vh);
 }
 .eyes2{
-  height: 2.5vw;
-  width: 2.5vw;
+  height: 2.2vw;
+  width: 2.2vw;
   background: rgba(0, 0, 0, 1);
   border: 5px solid rgba(64, 145, 108, 1);
   border-radius: 999999vh;
@@ -240,6 +313,16 @@ img.navIcon{
   border-radius: 999999vh;
 
     transform: translate(0.5vh, 1vh);
+
+}
+
+.mouth{
+  height: 0.4vw;
+  width: 5vw;
+  background: rgba(0, 0, 0, 1);
+  border: 3px solid rgba(45, 106, 79, 1);
+  transform: translate(0vh, -1vh);
+  border-radius: 0px 0px 20px 20px;
 
 }
 
@@ -265,18 +348,108 @@ img.navIcon{
   }
 }
 
+@keyframes headBounce{
+  0%{
+      transform: translateY(0vh) skew(0deg);
+  }
+  33%{
+    transform: translateY(1.32vh) skew(4deg);
+  }
+  50%{
+      transform: translateY(2vh) skew(0deg);
+  }
+  66%{
+    transform: translateY(1.32vh) skew(-4deg);
+  }
+  100%{
+    transform: translateY(0vh) skew(0deg);
+  }
+}
+
 
 .body{
   animation-name: bodyBounce;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 
   width: 10vw; 
   height: 15vh;
   background: rgba(64, 145, 108, 1);
-  border: 1px solid black;
+    background-image: linear-gradient(to bottom, rgba(64, 145, 108, 1), rgba(45, 106, 79, 1), rgba(27, 67, 50, 1));
+
   border-radius: 20vh;
+
+  display: flex;
+  align-items: flex-end;
 
   z-index: 3;
 }
+
+.foot1{
+  animation-name: feet1Bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  float: left;
+  width: 3vw;
+  height: 10vh;
+  background-image: linear-gradient(to bottom, rgba(27, 67, 50, 1) 0%, rgba(45, 106, 79, 1) 70%,   rgba(64, 145, 108, 1) 100%);
+
+  transform: rotate(30deg) translate(-1.5vh, 3vh);
+
+clip-path: polygon(50% 0%, 80% 5%, 100% 25%, 100% 70%, 80% 90%, 64% 80%, 48% 100%, 32% 80%, 16% 90%, 0% 70%, 0 25%, 20% 5%);
+}
+
+.foot2{
+  animation-name: feet2Bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  float: left;
+  width: 3vw;
+  height: 10vh;
+  background-image: linear-gradient(to bottom, rgba(27, 67, 50, 1) 0%, rgba(45, 106, 79, 1) 70%,   rgba(64, 145, 108, 1) 100%);
+
+  transform: translate(5vw, 2vh) rotate(-30deg);
+
+clip-path: polygon(50% 0%, 80% 5%, 100% 25%, 100% 70%, 80% 90%, 64% 80%, 48% 100%, 32% 80%, 16% 90%, 0% 70%, 0 25%, 20% 5%);
+}
+
+@keyframes feet1Bounce{
+  0%{
+      transform: rotate(30deg) translate(-1.5vh, 3vh);
+  }
+  33%{
+  }
+  50%{
+      transform: rotate(45deg) translate(-1.5vh, 3vh);
+  }
+  66%{
+  }
+  100%{
+      transform: rotate(30deg) translate(-1.5vh, 3vh);
+  }
+}
+
+@keyframes feet2Bounce{
+  0%{
+      transform: translate(5vw, 2vh) rotate(-30deg);
+  }
+  33%{
+  }
+  50%{
+      transform: translate(5vw, 2vh) rotate(-45deg);
+  }
+  66%{
+  }
+  100%{
+      transform: translate(5vw, 2vh) rotate(-30deg);
+  }
+}
+
+
+
+
