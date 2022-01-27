@@ -1,5 +1,5 @@
 var audio = new Audio('/Resources/Sounds/bless.mp3');
-
+var talkAudio = new Audio('/Resources/Sounds/blessingSpeech.mp3');
 
 NiewWeetje();
 
@@ -33,15 +33,34 @@ var i = 0;
 var txt = 'Press the button, To make me say something wise.'
 var setTxt = '';
 var speed = 40; /* The speed/duration of the effect in milliseconds */
+var doFrogSound = false;
  
 function typeWriter() {
  if (i < txt.length) {
+   doFrogSound = true;
+
    setTxt += txt.charAt(i);
    document.getElementById("InhoudWeetje").innerHTML = '"' + setTxt + '"';
+
+   if(txt.charAt(i) == ','.charAt(0) || txt.charAt(i) == '.'.charAt(0)){
+    timeout = setTimeout(typeWriter, speed * 10);
+   }else{
+    timeout = setTimeout(typeWriter, speed);
+   }
+
    i++;
-   timeout = setTimeout(typeWriter, speed);
+ }else{
+   doFrogSound = false;
  }
 }
  
+function MakeTalkSound(){
+  if(doFrogSound == true){
+    talkAudio.currentTime=0;
+    talkAudio.play();
+  }
+
+  setTimeout(MakeTalkSound, 1000);
+}
 
 
